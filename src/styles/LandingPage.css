@@ -1,0 +1,147 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.landing-container::-webkit-scrollbar {
+  display: none !important;
+}
+.header {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  font-size: 23px;
+}
+.header li {
+  margin-right: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.header li:hover {
+  color: #b98144;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 600px;
+
+  background-image: url("../assets/hotel-landing.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(0, 0, 0);
+}
+.top button {
+  width: 200px;
+  margin-top: 24%;
+  background-color: white;
+  color: rgb(73, 67, 67);
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+  height: 800px;
+  background-color: rgb(240, 240, 240);
+}
+.center-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 90px;
+}
+.center-single-bed {
+  width: 90%;
+  height: 65%;
+  background-image: url("../assets/center-single-bed.svg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+.center-double-bed {
+  width: 90%;
+  height: 65%;
+  background-image: url("../assets/center-double-bed.svg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.center-family-size {
+  width: 90%;
+  height: 65%;
+  background-image: url("../assets/center-family-size.svg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+.center p {
+  margin-top: -60px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #131212;
+}
+.center-title h3 {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #b98144;
+  margin: 0;
+}
+.center-title h1 {
+  font-size: 40px;
+  color: #383838;
+  margin: 0;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  font-size: 15px;
+  flex-direction: column;
+  color: rgb(56, 53, 53);
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow:
+    rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}

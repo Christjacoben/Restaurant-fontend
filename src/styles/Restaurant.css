@@ -1,0 +1,416 @@
+.restaurant-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  width: 100%;
+
+  border-radius: 20px;
+  background: radial-gradient(circle at top, #151b34, #0b0f1f);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* soft animated glow */
+.restaurant-main::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: radial-gradient(
+    circle at center,
+    rgba(212, 175, 55, 0.12),
+    transparent 70%
+  );
+  animation: luxuryGlow 12s infinite linear;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@keyframes luxuryGlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== HEADER + MESSAGE ===== */
+
+.restaurant-title {
+  font-size: 2.4rem;
+  color: #ffd700;
+  margin-bottom: 12px;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 16px rgba(212, 175, 55, 0.7);
+  text-transform: uppercase;
+}
+
+.restaurant-subtitle {
+  font-size: 0.95rem;
+  color: #c9c9c9;
+  margin-bottom: 22px;
+  max-width: 560px;
+  line-height: 1.5;
+}
+
+.message {
+  background-color: rgba(212, 175, 55, 0.07);
+  color: #ffd700;
+  text-align: center;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto 1.6rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+}
+
+/* ===== BACK BUTTON ===== */
+
+.btn-backrestaurant {
+  align-self: flex-start;
+  background: transparent;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-backrestaurant:hover {
+  background: #ffd700;
+  color: #101422;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(212, 175, 55, 0.6);
+}
+
+/* ===== FORM ===== */
+
+.dish-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at top, #1f263f, #12162a);
+  padding: 22px 20px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow: inset 0 1px 4px rgba(255, 215, 0, 0.18),
+    0 14px 26px rgba(0, 0, 0, 0.7);
+  margin-bottom: 28px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.dish-form-title {
+  font-size: 1.1rem;
+  color: #ffd700;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.dish-form input {
+  padding: 11px 14px;
+  margin: 7px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  background: #1f263d;
+  color: #fff;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 320px;
+}
+
+.dish-form input::placeholder {
+  color: #aeb4d3;
+  font-size: 0.9rem;
+}
+
+.dish-form input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+/* ===== PRIMARY BUTTONS ===== */
+
+.add-btn,
+.save-btn {
+  background: linear-gradient(135deg, #d4af37, #b08d2f);
+  border: none;
+  padding: 11px 22px;
+  color: #101422;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  margin-top: 12px;
+}
+
+.add-btn:hover,
+.save-btn:hover {
+  background: linear-gradient(135deg, #ffde59, #d4af37);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.7);
+}
+
+/* ===== MENU GRID ===== */
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+}
+
+/* ===== DISH CARD ===== */
+
+.dish-card {
+  background: linear-gradient(145deg, #1a1f33, #13182b);
+  border-radius: 18px;
+  width: 260px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.75),
+    inset 0 1px 4px rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.12);
+  text-align: center;
+  padding: 18px 16px 16px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+    border-color 0.35s ease, background 0.35s ease;
+  position: relative;
+}
+
+.dish-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.dish-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(212, 175, 55, 0.4);
+  border-color: rgba(255, 215, 0, 0.7);
+  background: radial-gradient(circle at top, #252c4a, #151a30);
+}
+
+.menu-grid:hover > .dish-card:not(:hover) {
+  filter: blur(2.5px) brightness(0.85);
+  transform: translateY(0) scale(0.97);
+}
+
+/* ===== DISH TEXT ===== */
+
+.dish-info h3 {
+  color: #ffd700;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: 0.4px;
+}
+
+.dish-info p {
+  font-size: 0.9rem;
+  color: #c3c8e4;
+}
+
+.dish-price {
+  color: #ffb86c;
+  font-weight: 700;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+/* ===== CARD BUTTONS ===== */
+
+.crud-btns button,
+.order-btn {
+  margin-top: 10px;
+  margin-inline: 4px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.28s ease;
+  font-size: 0.85rem;
+}
+
+/* edit */
+.edit-btn {
+  background-color: #ffd700;
+  color: #101422;
+}
+
+.edit-btn:hover {
+  background-color: #ffeb7a;
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
+}
+
+/* delete */
+.delete-btn {
+  background-color: #e63946;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #ff5e5e;
+  box-shadow: 0 8px 16px rgba(230, 57, 70, 0.6);
+}
+
+/* order */
+.order-btn {
+  background: linear-gradient(135deg, #d4af37, #b08d2f);
+  color: #101422;
+}
+
+.order-btn:hover {
+  background: linear-gradient(135deg, #ffde59, #d4af37);
+  box-shadow: 0 8px 18px rgba(212, 175, 55, 0.6);
+}
+
+/* ===== CART ===== */
+
+.cart-container {
+  margin-top: 24px;
+  background: rgba(15, 19, 39, 0.96);
+  border-radius: 18px;
+  padding: 18px 20px 20px;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65);
+  width: 100%;
+  max-width: 650px;
+  text-align: left;
+}
+
+.cart-container h2 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.cart-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+.cart-container button {
+  background: #e63946;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.8rem;
+}
+
+.cart-container button:hover {
+  background: #ff5e5e;
+}
+
+/* checkout */
+.checkout-btn {
+  background: linear-gradient(135deg, #d4af37, #b08d2f);
+  color: #101422;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.checkout-btn:hover {
+  background: linear-gradient(135deg, #ffde59, #d4af37);
+  box-shadow: 0 8px 18px rgba(212, 175, 55, 0.6);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .restaurant-main {
+    padding: 24px 18px 32px;
+    margin: 24px 12px;
+  }
+
+  .restaurant-title {
+    font-size: 2rem;
+  }
+
+  .restaurant-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .dish-card {
+    width: 230px;
+  }
+
+  .dish-form {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-title {
+    font-size: 1.7rem;
+  }
+
+  .dish-card {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .add-btn,
+  .save-btn {
+    padding: 9px 16px;
+    font-size: 0.82rem;
+  }
+
+  .menu-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-container {
+    padding-inline: 14px;
+  }
+}

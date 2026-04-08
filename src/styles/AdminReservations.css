@@ -1,0 +1,125 @@
+.admin-container {
+  max-width: 90%;
+  height: 32rem;
+  margin: 40px auto;
+  padding: 20px;
+  background: #101422;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stat-card {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  background: #272b3b;
+}
+
+.stat-card.pending {
+  background: #f0ad4e;
+  color: #000;
+}
+.stat-card.accepted {
+  background: #5cb85c;
+}
+.stat-card.declined {
+  background: #d9534f;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.controls input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.controls select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+.admin-table th {
+  background: #272b3b;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #f0ad4e;
+  color: #000;
+}
+.status.accepted {
+  background: #5cb85c;
+}
+.status.declined {
+  background: #d9534f;
+}
+
+.btn {
+  margin: 2px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.btn.accept {
+  background: #5cb85c;
+  color: #fff;
+}
+.btn.decline {
+  background: #d9534f;
+  color: #fff;
+}
+.btn.delete {
+  background: #444;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}

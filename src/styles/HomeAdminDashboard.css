@@ -1,0 +1,127 @@
+.admin-main {
+  padding: 24px;
+
+  height: 50%;
+  background: #ffffff;
+  color: #1f2937;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.admin-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #b68900;
+}
+
+.admin-header p {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* Summary Cards */
+.admin-summary {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: #f9fafb;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  width: 230px;
+}
+
+.summary-card h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #b68900;
+}
+
+.summary-number {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.summary-sub {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Filters */
+.admin-filters {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.filter-input,
+.filter-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+/* Tables */
+.table-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  margin-bottom: 24px;
+}
+
+.table-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #b68900;
+  font-weight: 600;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.reservation-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reservation-table th,
+.reservation-table td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px;
+  text-align: left;
+}
+
+.reservation-table th {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Badges */
+.badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.badge-confirmed {
+  background: #16a34a;
+}
+
+.badge-pending {
+  background: #facc15;
+  color: #000;
+}
+
+.badge-cancelled {
+  background: #ef4444;
+}

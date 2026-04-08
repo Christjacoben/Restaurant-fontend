@@ -1,0 +1,282 @@
+.sale-report {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.sale-report h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #0f172a;
+}
+
+.report-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filter-group h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  border-radius: 20px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: #94a3b8;
+  background-color: #f1f5f9;
+}
+
+.filter-btn.active {
+  background-color: #b68900;
+  color: #ffffff;
+  border-color: #b68900;
+  font-weight: 600;
+}
+
+.print-btn {
+  width: 10%;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #0f7e1e;
+  background-color: #0f7e1e;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.print-btn:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.print-btn:active {
+  transform: scale(0.98);
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-cards .card {
+  background: #b68900;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-cards .card h4 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 0.5rem 0;
+  opacity: 0.9;
+}
+
+.summary-cards .card .value {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Report Content */
+.report-content {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  overflow-x: auto;
+  padding: 1.5rem;
+}
+
+.no-data,
+.error-message,
+.loading-message {
+  text-align: center;
+  padding: 2rem;
+  font-size: 16px;
+  color: #64748b;
+}
+
+.error-message {
+  color: #dc2626;
+  background-color: #fee2e2;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.loading-message {
+  color: #0ea5e9;
+  padding: 2rem;
+}
+
+/* Table Styles */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  max-height: 600px;
+  overflow-y: auto;
+  display: table;
+}
+
+.report-table thead {
+  background-color: #f1f5f9;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.report-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #0f172a;
+  text-transform: capitalize;
+}
+
+.report-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.report-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.report-table td.amount {
+  font-weight: 600;
+  color: #059669;
+}
+
+.report-table .status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.report-table .status.paid {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.report-table .status.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.report-table .status.failed {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.report-table .status.confirm {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* Menu list in table */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 200px;
+}
+
+.menu-list li {
+  font-size: 13px;
+  color: #475569;
+  padding: 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sale-report {
+    padding: 1rem;
+  }
+
+  .sale-report h2 {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-buttons {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .summary-cards .card {
+    padding: 1rem;
+  }
+
+  .summary-cards .card .value {
+    font-size: 20px;
+  }
+
+  .report-table {
+    font-size: 12px;
+  }
+
+  .report-table th,
+  .report-table td {
+    padding: 0.75rem;
+  }
+
+  .report-content {
+    padding: 0.75rem;
+  }
+}

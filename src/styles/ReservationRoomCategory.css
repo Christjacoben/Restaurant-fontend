@@ -1,0 +1,187 @@
+.reservation-category {
+  padding: 24px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+.reservation-card-card {
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.reservation-card-title {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 18px;
+  color: #b68900;
+  font-weight: 600;
+}
+
+.reservation-table-wrapper {
+  overflow-x: auto;
+}
+
+.reservation-table {
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.reservation-table th,
+.reservation-table td {
+  padding: 8px 10px;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.reservation-table thead th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+.reservation-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reservation-empty {
+  text-align: center;
+  color: #6b7280;
+  padding: 14px 0;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-confirmed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.reservation-btn-reschedule {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.reservation-btn-reschedule:hover {
+  opacity: 0.9;
+}
+
+.reservation-error {
+  color: #dc2626;
+}
+
+.reschedule-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.reschedule-modal {
+  background: #ffffff;
+  width: 380px;
+  max-width: 95vw;
+  border-radius: 16px;
+  padding: 16px 18px 18px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+}
+
+.reschedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.reschedule-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.reschedule-close {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.reschedule-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.reschedule-body label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #374151;
+}
+
+.reschedule-body input {
+  margin-top: 4px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.reschedule-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.reschedule-btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.reschedule-btn.cancel {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.reschedule-btn.save {
+  background: #2563eb;
+  color: white;
+}
+
+.reschedule-btn:hover {
+  opacity: 0.9;
+}

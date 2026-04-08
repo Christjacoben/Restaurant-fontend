@@ -1,0 +1,208 @@
+/* ========== MAIN LAYOUT ========== */
+.Admin-Main {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  background: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ========== SIDEBAR ========== */
+.main-sidebar {
+  width: 260px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  background: #7e6418;
+  box-shadow: 6px 0 20px rgba(0, 0, 0, 0.45);
+  color: #fff;
+  z-index: 10;
+}
+
+/* LOGO SECTION */
+.main-sidebar-top {
+  display: flex;
+  justify-content: center;
+  padding: 18px 10px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.main-sidebar-top img {
+  width: 65%;
+  object-fit: contain;
+}
+
+/* MENU ITEMS */
+.main-sidebar-bottom {
+  flex: 1;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-items {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  gap: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+
+  transition:
+    background 0.22s ease,
+    transform 0.2s ease;
+}
+
+.side-items p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e8e8e8;
+}
+
+/* ICON inside side-item */
+.side-items svg,
+.side-items i {
+  font-size: 1.3rem;
+  color: #ffcf53;
+}
+
+/* Hover */
+.side-items:hover {
+  background: rgba(255, 207, 83, 0.15);
+  transform: translateX(4px);
+}
+
+/* Active menu */
+.side-items.active {
+  background: linear-gradient(90deg, #ffcf53, #ffe39a);
+}
+
+.side-items.active p,
+.side-items.active svg {
+  color: #1a1407;
+}
+
+/* ========== MAIN CONTENT AREA ========== */
+.main-content {
+  flex: 1;
+  padding: 20px 26px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Remove scrollbar for cleanliness */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+.main-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+/* ========== DASHBOARD CARD WRAPPER ========== */
+.home-admin-dashboard {
+  width: 100%;
+  min-height: calc(100vh - 40px);
+
+  background: #ffffff;
+  padding: 24px 30px;
+  border-radius: 18px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+  overflow-y: auto;
+}
+
+.sale-report {
+  width: 100%;
+  min-height: calc(100vh - 40px);
+
+  background: #ffffff;
+  padding: 24px 30px;
+  border-radius: 18px;
+
+  overflow-y: auto;
+}
+
+/* Slight divider for sections inside */
+.section-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+}
+
+/* Example fix for your tables */
+.section-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.section-card th {
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 10px 0;
+  color: #444;
+}
+
+.section-card td {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status.pending {
+  background: rgba(255, 193, 7, 0.2);
+  color: #c79100;
+}
+
+.status.confirmed {
+  background: rgba(40, 167, 69, 0.2);
+  color: #257a38;
+}
+
+.status.cancelled {
+  background: rgba(220, 53, 69, 0.2);
+  color: #a41d2b;
+}
+
+@media (max-width: 1024px) {
+  .main-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Admin-Main {
+    flex-direction: column;
+  }
+
+  .main-sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .main-sidebar-bottom {
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+}
