@@ -162,6 +162,43 @@ function ReservationRoomCategory() {
     }
   };
 
+ // Handle confirm payment - updates payment_status to 'paid' for a specific reservation
+  const handleConfirmPayment = async (reservationId) => {
+    // Confirm action with admin before proceeding
+    if (
+      !window.confirm(
+        "Are you sure you want to confirm this reservation payment?",
+      )
+    ) {
+      return;
+    }
+
+    try {
+      // Call backend API endpoint to update payment_status to 'paid'
+      await axios.put(
+        `${API_URL}/api/admin/table-reservations/${reservationId}/confirm`,
+        {},
+        { withCredentials: true },
+      );
+
+      // Update the local state to reflect the payment status change immediately
+      setTableReservations((prev) =>
+        prev.map((t) =>
+          t.id === reservationId ? { ...t, payment_status: "paid" } : t,
+        ),
+      );
+
+      alert("Payment confirmed successfully!");
+    } catch (err) {
+      console.error(err);
+      alert(
+        err.response?.data?.message ||
+          "Failed to confirm payment. Please try again.",
+      );
+    }
+  };
+
+  
   if (loading) {
     return (
       <div className="reservation-category">
@@ -234,7 +271,7 @@ function ReservationRoomCategory() {
       </div>
 
       {/* TABLE RESERVATIONS TABLE */}
-      <div className="reservation-card-card">
+       <div className="reservation-card-card">
         <h2 className="reservation-card-title">Table Reservations</h2>
         <div className="reservation-table-wrapper">
           <table className="reservation-table">
@@ -278,6 +315,16 @@ function ReservationRoomCategory() {
                     >
                       Reschedule
                     </button>
+                    {/* Confirm button - only show if payment status is not already paid */}
+                    {t.payment_status !== "paid" && (
+                      <button
+                        className="reservation-btn-confirm"
+                        onClick={() => handleConfirmPayment(t.id)}
+                        style={{ marginLeft: "8px" }}
+                      >
+                        Confirm
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}
