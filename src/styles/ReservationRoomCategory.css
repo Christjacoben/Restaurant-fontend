@@ -172,6 +172,16 @@
   cursor: pointer;
 }
 
+.reservation-btn-confirm {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #16a34a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .reschedule-btn.cancel {
   background: #e5e7eb;
   color: #111827;
